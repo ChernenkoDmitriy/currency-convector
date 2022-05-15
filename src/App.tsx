@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { ConvectorScreen } from './ui/ConvectorScreen';
+import { AppNavigator } from './navigation';
 
 export const App: FC = () => {
-    return (<ConvectorScreen />);
+    return (<AppNavigator />);
 };
