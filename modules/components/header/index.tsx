@@ -1,8 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { FC } from 'react';
 import { TouchableOpacity, View, Text } from 'react-native';
-import { localization } from '../../../localization';
-import { colors } from '../../../theme/colors';
+import { localization } from '../../../src/localization';
+import { colors } from '../../../src/theme/colors';
 import { ArrowBackIcon } from '../arrowBack';
 import { styles } from './styles';
 

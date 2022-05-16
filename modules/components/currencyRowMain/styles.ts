@@ -1,10 +1,13 @@
 import { StyleSheet } from 'react-native';
-import { colors } from '../../../theme/colors';
+import { colors } from '../../../src/theme/colors';
 
 export const styles = StyleSheet.create({
     container: {
-        height: 60,
+        minHeight: 70,
+        flex:1,
         width: '100%',
+        borderBottomColor: colors.border,
+        borderBottomWidth: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -12,31 +15,31 @@ export const styles = StyleSheet.create({
     },
     containerLogo: {
         paddingVertical: 4,
-        height: 50,
-        width: 50,
+        height: '100%',
+        width: 70,
         alignItems: 'center',
         justifyContent: 'space-around'
     },
     logo: {
-        width: 40,
-        height: 40,
+        width: 50,
+        height: 50,
         backgroundColor: 'gray',
         borderRadius: 50,
         justifyContent: 'center',
         alignItems: 'center',
     },
-    textWrapper: {
-        flex: 1,
-        paddingHorizontal: 10,
-    },
-    text: {
-        color: colors.regularText,
-        fontSize: 24,
-        lineHeight: 34,
-    },
     symbol: {
         color: colors.regularText,
-        fontSize: 22,
+        fontSize: 30,
+        lineHeight: 34,
+    },
+    textWrapper: {
+        flex: 1,
+        alignItems: 'flex-end'
+    },
+    amountText: {
+        color: colors.regularText,
+        fontSize: 30,
         lineHeight: 34,
     },
 }); 

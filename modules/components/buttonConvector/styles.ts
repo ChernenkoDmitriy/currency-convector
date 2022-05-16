@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { Dimensions } from 'react-native';
-import { colors } from '../../../theme/colors';
+import { colors } from '../../../src/theme/colors';
 
 const { width } = Dimensions.get('screen');
 export const BUTTON_SIZE = width / 4;

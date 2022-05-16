@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { View } from 'react-native';
-import { colors } from '../../../theme/colors';
+import { colors } from '../../../src/theme/colors';
 import { ButtonsConvector } from '../buttonConvector';
 import { styles } from './styles';
 

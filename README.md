@@ -154,3 +154,11 @@
     "ZMW": "Zambian Kwacha"
   },
 }
+
+api key abd94acef545e883da21e4fa
+
+https://v6.exchangerate-api.com/v6/abd94acef545e883da21e4fa/latest/USD
+
+https://app.exchangerate-api.com/dashboard/confirmed
+
+https://www.exchangerate-api.com/docs/free
