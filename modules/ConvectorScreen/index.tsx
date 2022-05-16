@@ -1,17 +1,20 @@
 import { StackNavigationProp } from '@react-navigation/stack';
-import React, { FC, useEffect } from 'react';
+import { observer } from 'mobx-react';
+import React, { FC, useMemo } from 'react';
 import { SafeAreaView } from 'react-native';
-import { fetchCurrencyList } from '../../services/fetchCurrencyList';
+import { useUiContext } from '../../src/UIProvider';
 import { ButtonsConvectorBlock } from '../components/buttonsConvectorBlock';
 import { CurrencyRowMain } from '../components/currencyRowMain';
 import { HeaderMain } from '../components/headerMain';
-import { styles } from './styles';
+import { getStyle } from './styles';
 
 interface IProps {
     navigation: StackNavigationProp<any>;
 }
 
-export const ConvectorScreen: FC<IProps> = ({ navigation }) => {
+export const ConvectorScreen: FC<IProps> =  observer(({ navigation }) => {
+    const { colors } = useUiContext();
+    const styles = useMemo(() => getStyle(colors), [colors]);
 
     const goToCurrencyList = () => {
         navigation.navigate('CURRENCY_LIST');
@@ -25,4 +28,4 @@ export const ConvectorScreen: FC<IProps> = ({ navigation }) => {
             <ButtonsConvectorBlock />
         </SafeAreaView>
     );
-};
+});

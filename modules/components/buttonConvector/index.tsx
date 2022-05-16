@@ -1,6 +1,7 @@
-import React, { FC } from 'react';
+import React, { FC, useMemo } from 'react';
 import { View, Text } from 'react-native';
-import { BUTTON_SIZE, styles } from './styles';
+import { useUiContext } from '../../../src/UIProvider';
+import { BUTTON_SIZE, getStyle } from './styles';
 
 interface IProps {
     doubleWidth?: boolean;
@@ -11,6 +12,8 @@ interface IProps {
 }
 
 export const ButtonsConvector: FC<IProps> = ({ text, doubleWidth, color }) => {
+    const { colors } = useUiContext();
+    const styles = useMemo(() => getStyle(colors), [colors]);
 
     return (
         <View style={[

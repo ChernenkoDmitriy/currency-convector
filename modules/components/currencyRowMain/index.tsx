@@ -1,6 +1,7 @@
-import React, { FC } from 'react';
+import React, { FC, useMemo } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { styles } from './styles';
+import { useUiContext } from '../../../src/UIProvider';
+import { getStyle } from './styles';
 
 interface IProps {
     name: string;
@@ -10,6 +11,9 @@ interface IProps {
 }
 
 export const CurrencyRowMain: FC<IProps> = ({ name, amount, symbol, onPress }) => {
+    const { colors } = useUiContext();
+    const styles = useMemo(() => getStyle(colors), [colors]);
+
     return (
         <TouchableOpacity style={styles.container} onPress={onPress}>
             <View style={styles.containerLogo}>

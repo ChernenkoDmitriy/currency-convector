@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { ConvectorScreen } from '../ui/ConvectorScreen';
-import { CurrencyListScreen } from '../ui/CurrencyListScreen';
+import { createStackNavigator } from '@react-navigation/stack'; 
+import { ConvectorScreen } from '../../modules/ConvectorScreen';
+import { CurrencyListScreen } from '../../modules/CurrencyListScreen';
 
 const Stack = createStackNavigator();
 

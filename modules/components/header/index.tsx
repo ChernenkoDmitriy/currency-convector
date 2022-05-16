@@ -1,12 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { FC } from 'react';
+import React, { FC, useMemo } from 'react';
 import { TouchableOpacity, View, Text } from 'react-native';
-import { localization } from '../../../src/localization';
-import { colors } from '../../../src/theme/colors';
+import { useUiContext } from '../../../src/UIProvider';
 import { ArrowBackIcon } from '../arrowBack';
-import { styles } from './styles';
+import { getStyle } from './styles';
 
 export const Header: FC = () => {
+    const { colors, t } = useUiContext();
+    const styles = useMemo(() => getStyle(colors), [colors]);
     const navigation = useNavigation();
 
     return (
@@ -15,7 +16,7 @@ export const Header: FC = () => {
                 <ArrowBackIcon width={24} height={24} color={colors.border} />
             </TouchableOpacity>
             <View style={styles.textWrapper}>
-                <Text numberOfLines={1} style={styles.title}>{localization.currency}</Text>
+                <Text numberOfLines={1} style={styles.title}>{t('currency')}</Text>
             </View>
         </View>
     );
