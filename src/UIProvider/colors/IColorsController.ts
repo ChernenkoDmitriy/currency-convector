@@ -5,6 +5,9 @@ export type IColors = {
     buttonEdit: string;
     buttonOperation: string;
     buttonNumber: string;
+    borderCurrency: string;
+    subText: string;
+    iconColor: string;
 }
 
 export interface IColorsController {

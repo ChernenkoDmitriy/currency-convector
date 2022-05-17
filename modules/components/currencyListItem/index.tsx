@@ -1,34 +1,30 @@
 import React, { FC, memo, useMemo } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { countries } from '../../../src/libraries/currencies/Countries';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { flags } from '../../../src/libraries/currencies/Flags';
 import { useUiContext } from '../../../src/UIProvider';
 import { getStyle } from './styles';
 
 interface IProps {
     name: string;
-    code: number;
-    symbol: string;
-    onPress: () => void;
+    onPress: (value: string) => void;
 }
 
-export const CurrencyListItem: FC<IProps> = memo(({ name, code, symbol, onPress }) => {
-    const { colors } = useUiContext();
+export const CurrencyListItem: FC<IProps> = memo(({ name, onPress }) => {
+    const { colors, t } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
+    const image = flags.getFlagByCurrency(name);
 
-    // const country = Object.values(countries).find(item => item.code === symbol);
-    // console.log('country ', country?.code)
+    const onHandlePress = () => {
+        onPress(name);
+    }
 
     return (
-        <TouchableOpacity style={styles.container} onPress={onPress}>
-            <View style={styles.containerLogo}>
-                <View style={styles.logo}>
-                    <Text style={styles.symbol}>{symbol}</Text>
-                </View>
-            </View>
+        <TouchableOpacity style={styles.container} onPress={onHandlePress}>
+            <Image source={{ uri: image }} style={styles.logo} resizeMode='stretch' />
             <View style={styles.textWrapper}>
-                <Text numberOfLines={1} style={styles.text}>{name}</Text>
+                <Text numberOfLines={1} style={styles.text}>{t(name)}</Text>
             </View>
-            <Text numberOfLines={1} style={styles.symbol}>{code}</Text>
+            <Text numberOfLines={1} style={styles.symbol}>{name}</Text>
         </TouchableOpacity>
     );
 });

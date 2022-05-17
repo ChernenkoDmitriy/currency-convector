@@ -22,12 +22,13 @@ export const getStyle = (colors: IColors) => {
             justifyContent: 'space-around'
         },
         logo: {
-            width: 50,
-            height: 50,
-            backgroundColor: 'gray',
-            borderRadius: 50,
+            borderColor: colors.borderCurrency,
+            borderWidth: 1,
+            width: 40,
+            height: 40,
             justifyContent: 'center',
             alignItems: 'center',
+            borderRadius: 50,
         },
         symbol: {
             color: colors.regularText,

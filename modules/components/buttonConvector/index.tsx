@@ -1,5 +1,5 @@
 import React, { FC, useMemo } from 'react';
-import { View, Text } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import { useUiContext } from '../../../src/UIProvider';
 import { BUTTON_SIZE, getStyle } from './styles';
 
@@ -16,7 +16,7 @@ export const ButtonsConvector: FC<IProps> = ({ text, doubleWidth, color }) => {
     const styles = useMemo(() => getStyle(colors), [colors]);
 
     return (
-        <View style={[
+        <TouchableOpacity style={[
             styles.container,
             {
                 width: doubleWidth ? BUTTON_SIZE * 2 : BUTTON_SIZE,
@@ -24,6 +24,6 @@ export const ButtonsConvector: FC<IProps> = ({ text, doubleWidth, color }) => {
             }
         ]}>
             <Text style={styles.text}>{text}</Text>
-        </View>
+        </TouchableOpacity>
     );
 };

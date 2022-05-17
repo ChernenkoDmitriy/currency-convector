@@ -9,6 +9,6 @@ interface IProps {
 
 export const ArrowBackIcon: FC<IProps> = ({ width, height, color }) => (
     <Svg width={width || "18"} height={height || "16"} fill="none" viewBox="0 0 18 16"  >
-        <Path stroke={color || "#000"} strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 1L1 8l7 7M1 8h16"  ></Path>
+            <Path d="M7 1l-6 6 6 6" stroke={color || "#000"} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
     </Svg>
 )

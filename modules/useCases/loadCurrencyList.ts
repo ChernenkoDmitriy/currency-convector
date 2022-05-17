@@ -1,13 +1,12 @@
-import { ratesModel } from '../../src/entities/rates/Rates';
 import { requester } from '../../src/libraries/requester';
 
-export const fetchCurrencyList = async () => {
-    const url = 'https://api.coincap.io/v2/assets';
-    const options = { method: 'GET', };
-
-    const response = await requester.get(url, options);
-
-    if (response.data) {
-        ratesModel.ralesList = response?.data
+export const fetchCurrency = async (currency: string = 'USD') => {
+    try {
+        const url = 'https://open.er-api.com/v6/latest/' + currency;
+        const response = await requester.get(url);
+        return response;
+    } catch (error) {
+        console.error('fetchCurrencyList ', error)
     }
+
 }
