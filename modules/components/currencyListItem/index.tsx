@@ -1,5 +1,6 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC, memo, useMemo } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import { countries } from '../../../src/libraries/currencies/Countries';
 import { useUiContext } from '../../../src/UIProvider';
 import { getStyle } from './styles';
 
@@ -10,9 +11,12 @@ interface IProps {
     onPress: () => void;
 }
 
-export const CurrencyListItem: FC<IProps> = ({ name, code, symbol, onPress }) => {
+export const CurrencyListItem: FC<IProps> = memo(({ name, code, symbol, onPress }) => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
+
+    // const country = Object.values(countries).find(item => item.code === symbol);
+    // console.log('country ', country?.code)
 
     return (
         <TouchableOpacity style={styles.container} onPress={onPress}>
@@ -27,4 +31,4 @@ export const CurrencyListItem: FC<IProps> = ({ name, code, symbol, onPress }) =>
             <Text numberOfLines={1} style={styles.symbol}>{code}</Text>
         </TouchableOpacity>
     );
-};
+});

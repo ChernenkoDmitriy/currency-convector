@@ -12,7 +12,7 @@ interface IProps {
     navigation: StackNavigationProp<any>;
 }
 
-export const ConvectorScreen: FC<IProps> =  observer(({ navigation }) => {
+export const ConvectorScreen: FC<IProps> = observer(({ navigation }) => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
 
