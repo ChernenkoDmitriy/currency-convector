@@ -1,10 +1,14 @@
 export type IColors = {
+    inputBackground: string;
     background: string;
     border: string;
     regularText: string;
     buttonEdit: string;
     buttonOperation: string;
     buttonNumber: string;
+    borderCurrency: string;
+    subText: string;
+    iconColor: string;
 }
 
 export interface IColorsController {

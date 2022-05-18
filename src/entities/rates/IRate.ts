@@ -1,14 +1,13 @@
 export interface IRate {
-    changePercent24Hr: string;
-    explorer: string;
-    id: string;
-    marketCapUsd: string;
-    maxSupply: string;
-    name: string;
-    priceUsd: string;
-    rank: string;
-    supply: string;
-    symbol: string;
-    volumeUsd24Hr: string;
-    vwap24Hr: string;
-};
+    base_code: string;
+    documentation: string;
+    provider: string;
+    rates: object;
+    result: string;
+    terms_of_use: string;
+    time_eol_unix: number;
+    time_last_update_unix: number;
+    time_last_update_utc: string;
+    time_next_update_unix: number;
+    time_next_update_utc: string;
+}
