@@ -1,5 +1,6 @@
 export const allColors = {
     light: {
+        inputBackground: '#636363',
         iconColor: '#FFF',
         background: '#3E3E41',
         border: '#707070',
@@ -11,6 +12,7 @@ export const allColors = {
         buttonNumber: '#868686',
     },
     dark: {
+        inputBackground: '#636363',
         iconColor: '#FFF',
         background: '#3E3E41',
         border: '#707070',

@@ -1,5 +1,6 @@
 export const translations = {
   ru: {
+    cancel: "Отмена",
     settings: 'Настройки',
     information: 'Информация',
     share: 'Поделиться',
@@ -158,6 +159,7 @@ export const translations = {
     ZMW: 'Замбийская Квача',
   },
   ua: {
+    cancel: "Скасувати",
     settings: 'Налаштування',
     information: 'Інформація',
     share: 'Поділитися',
@@ -316,6 +318,7 @@ export const translations = {
     ZMW: 'Замбійська Квача',
   },
   en: {
+    cancel: "Cancel",
     settings: 'Settings',
     information: 'Information',
     share: 'Share',

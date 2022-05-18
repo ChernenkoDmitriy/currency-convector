@@ -1,4 +1,5 @@
 export type IColors = {
+    inputBackground: string;
     background: string;
     border: string;
     regularText: string;

@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { ratesModel } from "../../src/entities/rates/Rates";
-import { fetchCurrency } from "../useCases/loadCurrencyList";
+import { fetchCurrency } from "../useCases/fetchCurrency";
 
 export const useInitCurrency = () => {
 
