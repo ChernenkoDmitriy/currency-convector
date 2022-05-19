@@ -1,60 +1,73 @@
-import { IStorage, storage } from "../../libraries/storage";
 import { MobXRepository } from "../../store/MobXRepository";
 import { IRatesModel, ratesModel } from "../rates/Rates";
-// import { IRate } from "./IRate";
 
 export interface ICalculatorModal {
-    firstOperandStore: number;
-    secondOperandStore: number;
-    operatorStore: any;
-    readonly secondCalculatedRowStore: number;
+    firstRateRow: string;
+    operator: string;
+    readonly secondRateRow: string;
+    calculateResult: () => void;
 }
 
 class CalculatorModal implements ICalculatorModal {
-    private firstOperandStore = new MobXRepository<number>(0);
-    private secondOperandStore = new MobXRepository<number>(0);
+    private firstRateRowStore = new MobXRepository<string>('0');
+    private secondRateRowStore = new MobXRepository<string>('0');
+    private operandStore = new MobXRepository<string>('0');
     private operatorStore = new MobXRepository<string>('');
 
     constructor(private ratesModel: IRatesModel) {
 
     }
 
-    get firstOperand() {
-        return this.firstOperandStore.data;
+    get firstRateRow() {
+        return this.firstRateRowStore.data || '0';
     }
 
-    set firstOperand(data: number | null) {
-        this.firstOperandStore.save(data);
+    set firstRateRow(data: string) {
+        this.firstRateRowStore.save(data);
+        this.calculateRate();
     }
 
-    get secondOperand() {
-        return this.secondOperandStore.data;
-    }
-
-    set secondOperand(data: number | null) {
-        this.secondOperandStore.save(data);
+    get secondRateRow() {
+        return this.secondRateRowStore.data || '0';
     }
 
     get operator() {
-        return this.operatorStore.data;
+        return this.operatorStore.data || '';
     }
 
-    set operator(data: string | null) {
+    set operator(data: string) {
         this.operatorStore.save(data);
+        this.operandStore.save(this.firstRateRow);
+        this.firstRateRow = '0';
     }
 
     calculateResult() {
-        const calculatedResult = this.firstOperand + this.operator + this.secondOperand;
-        return calculatedResult
+        if (this.operator) {
+            const calculatedResult = this.operandStore.data + this.operator + this.firstRateRow;
+            const result = eval(calculatedResult);
+            console.log(result);
+            this.firstRateRow = String(Math.trunc(result * 100) / 100);
+        }
     }
 
-    // get secondCalculatedRow() {
-    //     return this.secondCalculatedRowStore.data;
-    // }
+    calculateClear() {
+        this.firstRateRow = '0';
+        this.operandStore.save('0');
+        this.operator = '';
+    }
 
-    private calculateRate() {
-        const calculatedAmount = this.firstCalculatedRow * this.ratesModel.rate
-        return calculatedAmount
+    calculateDelete() {
+        if (this.firstRateRow.length === 1) {
+            this.firstRateRow = '0';
+        } else {
+            this.firstRateRow = this.firstRateRow.slice(0, -1);
+        }
+
+    }
+
+    calculateRate() {
+        const calculatedAmount = Number(this.firstRateRow) * this.ratesModel.rate;
+        this.secondRateRowStore.save(String(Math.trunc(calculatedAmount * 100) / 100));
     }
 }
 

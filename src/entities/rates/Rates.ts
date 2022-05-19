@@ -54,7 +54,7 @@ class RatesModel implements IRatesModel {
     }
 
     get rate() {
-        return this.firstRate?.rates[this.secondRate?.base_code]
+        return this.firstRate?.rates[this.secondRate?.base_code];
     }
 
 }

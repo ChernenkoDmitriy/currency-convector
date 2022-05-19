@@ -1,5 +1,6 @@
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { useState } from "react";
+import { calculatorModal } from "../../src/entities/calculator/Calculator";
 import { ratesModel } from "../../src/entities/rates/Rates";
 import { fetchCurrency } from "../useCases/fetchCurrency";
 
@@ -24,6 +25,7 @@ export const useChoseCurrency = () => {
         let tempCurrency = ratesModel.firstRate;
         ratesModel.firstRate = ratesModel.secondRate;
         ratesModel.secondRate = tempCurrency;
+        calculatorModal.calculateRate()
     }
 
     const onChoseCurrency = (value: string) => {
@@ -32,9 +34,10 @@ export const useChoseCurrency = () => {
         } else {
             getNewRate(value);
         }
+        calculatorModal.calculateRate()
         navigation.goBack();
     }
 
-    return { searchText, setSearchText, onChoseCurrency };
+    return { searchText, setSearchText, onChoseCurrency, onChoseOppositeCurrency };
 
 }
