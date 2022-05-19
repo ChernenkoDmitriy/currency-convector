@@ -22,7 +22,10 @@ class ColorsController implements IColorsController {
 
     private load = () => {
         this.storage.get('COLOR_THEME')
-            .then(data => { data && this.colorsStore.save(data); })
+            .then(data => {
+                data && this.colorsStore.save(data);
+                data && this.saveTheme(data);
+            })
             .catch(error => console.warn('ColorsController -> load: ', error));
     }
 
@@ -36,7 +39,7 @@ class ColorsController implements IColorsController {
     }
 
     saveTheme = (data: 'dark' | 'light') => {
-        if (this.colorsStore.data && Object.keys(this.colorsStore.data).includes(data)) {
+        if (this.colorsStore.data && Object.keys(allColors).includes(data)) {
             this.themeStore.save(data);
             this.colorsStore.save(allColors[data]);
             this.persistTheme(data);
@@ -45,6 +48,6 @@ class ColorsController implements IColorsController {
 
 }
 
-const colorsStore = new MobXRepository<IColors>();
+const colorsStore = new MobXRepository<IColors>(allColors.light);
 const themeStore = new MobXRepository<'dark' | 'light'>();
 export const colorTheme = new ColorsController(themeStore, colorsStore, storage);

@@ -23,6 +23,7 @@ export const Search: FC<IProps> = ({ value, onChangeText }) => {
                     onChangeText={onChangeText}
                     value={value}
                     style={styles.input}
+                    placeholder={t('search')}
                 />
             </View>
             {!!value && <TouchableOpacity style={styles.buttonDelete} onPress={onClearSearch} >

@@ -1,5 +1,7 @@
 export type IColors = {
+    accentText: string;
     inputBackground: string;
+    accentColorLight: string;
     background: string;
     border: string;
     regularText: string;
