@@ -1,42 +1,42 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC, memo, useMemo } from 'react';
 import { View } from 'react-native';
-import { calculatorModal } from '../../../src/entities/calculator/Calculator';
+import { calculatorModel } from '../../../src/entities/calculator/Calculator';
 import { useUiContext } from '../../../src/UIProvider';
 import { useChoseCurrency } from '../../presenter/useChoseCurrency';
 import { ButtonsConvector } from '../buttonConvector';
 import { styles } from './styles';
 
-export const ButtonsConvectorBlock: FC = () => {
+export const ButtonsConvectorBlock: FC = memo(() => {
     const { colors } = useUiContext();
-    const { onChoseOppositeCurrency } = useChoseCurrency()
+    const { onChoseOppositeCurrency } = useChoseCurrency();
 
     const onPressNumber = (value: string) => {
-        if (calculatorModal.firstRateRow === '0' && value !== '.') {
-            calculatorModal.firstRateRow = value;
-        }
-        else {
-            if (value === '.' && calculatorModal.firstRateRow.includes('.')) {
-                return
+        if ( calculatorModel.firstRateRow.length < 14) {
+            if (value === '.' && calculatorModel.firstRateRow.includes('.') ||
+                calculatorModel.firstRateRow === '0' && calculatorModel.firstRateRow.length === 1 && value === '0') {
+                return;
+            } else if (calculatorModel.firstRateRow === '0' && calculatorModel.firstRateRow.length === 1 && value !== '.') {
+                calculatorModel.firstRateRow = value;
             } else {
-                calculatorModal.firstRateRow += value;
+                calculatorModel.firstRateRow = calculatorModel.firstRateRow + value;
             }
         }
     }
 
     const onPressOperator = (value: string) => {
-        calculatorModal.operator = value;
+        calculatorModel.operator = value;
     }
 
     const onPressResult = () => {
-        calculatorModal.calculateResult();
+        calculatorModel.calculateResult();
     }
 
     const onPressClear = () => {
-        calculatorModal.calculateClear();
+        calculatorModel.calculateClear();
     }
 
     const onPressDelete = () => {
-        calculatorModal.calculateDelete();
+        calculatorModel.calculateDelete();
     }
 
     const BUTTONS = useMemo(() => [
@@ -66,4 +66,4 @@ export const ButtonsConvectorBlock: FC = () => {
             {BUTTONS.map((item) => <ButtonsConvector key={item.text} {...item} />)}
         </View>
     );
-};
+});

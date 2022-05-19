@@ -12,13 +12,13 @@ class SettingsModel implements ISettingsModel {
         this.load();
     }
 
-    private persistSettings = (data: string[]) => {
-        Array.isArray(data) && this.storage.set('SETTINGS', data);
+    private persistSettings = (data: boolean) => {
+        this.storage.set('SETTINGS_VIBRATION', data);
     }
 
     private load = () => {
-        this.storage.get('SETTINGS')
-            .then(data => { })
+        this.storage.get('SETTINGS_VIBRATION')
+            .then(data => { data && this.vibrationStore.save(data) })
             .catch(error => console.warn('SettingsModel -> load: ', error));
     }
 
@@ -28,7 +28,7 @@ class SettingsModel implements ISettingsModel {
 
     set vibration(data: boolean) {
         this.vibrationStore.save(data);
-        // this.persistSettings(data);
+        this.persistSettings(data);
     }
 
 }

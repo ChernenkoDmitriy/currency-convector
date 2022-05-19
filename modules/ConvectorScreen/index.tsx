@@ -2,7 +2,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { observer } from 'mobx-react';
 import React, { FC, useMemo } from 'react';
 import { SafeAreaView } from 'react-native';
-import { calculatorModal } from '../../src/entities/calculator/Calculator';
+import { calculatorModel } from '../../src/entities/calculator/Calculator';
 import { ratesModel } from '../../src/entities/rates/Rates';
 import { useUiContext } from '../../src/UIProvider';
 import { ButtonsConvectorBlock } from '../components/buttonsConvectorBlock';
@@ -30,8 +30,8 @@ export const ConvectorScreen: FC<IProps> = observer(({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
             <HeaderMain />
-            <CurrencyRowMain currency={firstRate} amount={Number(calculatorModal.firstRateRow)} onPress={() => goToCurrencyList(true)} />
-            <CurrencyRowMain currency={secondRate} amount={Number(calculatorModal.secondRateRow)} onPress={() => goToCurrencyList(false)} />
+            <CurrencyRowMain currency={firstRate} amount={calculatorModel.firstRateRow} onPress={() => goToCurrencyList(true)} />
+            <CurrencyRowMain currency={secondRate} amount={calculatorModel.secondRateRow} onPress={() => goToCurrencyList(false)} />
             <ButtonsConvectorBlock />
         </SafeAreaView>
     );

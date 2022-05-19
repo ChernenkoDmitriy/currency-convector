@@ -7,7 +7,7 @@ import { getStyle } from './styles';
 
 interface IProps {
     currency: IRate | null;
-    amount: number;
+    amount: string;
     onPress: () => void;
 }
 

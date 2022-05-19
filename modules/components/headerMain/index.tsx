@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { FC, memo, useCallback, useMemo } from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import {  View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { SettingsIcon } from '../../../assets/settingsIcon';
 import { useUiContext } from '../../../src/UIProvider';
 import { getStyle } from './styles';

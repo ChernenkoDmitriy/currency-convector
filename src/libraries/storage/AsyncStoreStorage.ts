@@ -34,7 +34,7 @@ class AsyncStoreStorage implements IStorage {
         }
     }
 
-    set = async (service: string = '', payload: object | string | number) => {
+    set = async (service: string = '', payload: object | string | number | boolean) => {
         try {
             const payloadJSON = JSON.stringify(payload)
             await AsyncStorage.setItem(service, payloadJSON);

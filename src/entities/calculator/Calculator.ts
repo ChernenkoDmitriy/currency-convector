@@ -1,14 +1,14 @@
 import { MobXRepository } from "../../store/MobXRepository";
 import { IRatesModel, ratesModel } from "../rates/Rates";
 
-export interface ICalculatorModal {
+export interface ICalculatorModel {
     firstRateRow: string;
     operator: string;
     readonly secondRateRow: string;
     calculateResult: () => void;
 }
 
-class CalculatorModal implements ICalculatorModal {
+class CalculatorModel implements ICalculatorModel {
     private firstRateRowStore = new MobXRepository<string>('0');
     private secondRateRowStore = new MobXRepository<string>('0');
     private operandStore = new MobXRepository<string>('0');
@@ -45,6 +45,7 @@ class CalculatorModal implements ICalculatorModal {
         if (this.operator) {
             const calculatedResult = this.operandStore.data + this.operator + this.firstRateRow;
             const result = eval(calculatedResult);
+            console.log('result ',  String(Math.trunc(result * 100) / 100))
             this.firstRateRow = String(Math.trunc(result * 100) / 100);
         }
     }
@@ -61,13 +62,13 @@ class CalculatorModal implements ICalculatorModal {
         } else {
             this.firstRateRow = this.firstRateRow.slice(0, -1);
         }
-
     }
 
     calculateRate() {
         const calculatedAmount = Number(this.firstRateRow) * this.ratesModel.rate;
         this.secondRateRowStore.save(String(Math.trunc(calculatedAmount * 100) / 100));
     }
+
 }
 
-export const calculatorModal = new CalculatorModal(ratesModel);
+export const calculatorModel = new CalculatorModel(ratesModel);
