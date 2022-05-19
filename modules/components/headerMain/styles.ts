@@ -8,7 +8,13 @@ export const getStyle = (colors: IColors) => {
             width: '100%',
             borderBottomColor: colors.border,
             borderBottomWidth: 1,
+            justifyContent: 'center',
         },
+        button: {
+            height: 50, width: 50,
+            justifyContent: 'center',
+            alignItems: 'center',
+        }
     });
     return styles;
 }
