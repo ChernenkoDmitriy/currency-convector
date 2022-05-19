@@ -45,7 +45,6 @@ class CalculatorModal implements ICalculatorModal {
         if (this.operator) {
             const calculatedResult = this.operandStore.data + this.operator + this.firstRateRow;
             const result = eval(calculatedResult);
-            console.log(result);
             this.firstRateRow = String(Math.trunc(result * 100) / 100);
         }
     }
