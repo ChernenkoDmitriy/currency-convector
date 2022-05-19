@@ -5,19 +5,21 @@ import { BUTTON_SIZE, getStyle } from './styles';
 import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 import { settingsModel } from '../../../src/entities/settings/Settings';
 
+
 interface IProps {
     doubleWidth?: boolean;
     color: string;
     value: string;
     text: string;
-    onPress: () => void;
+    onPress: (value: string) => void;
 }
 
-export const ButtonsConvector: FC<IProps> = ({ text, doubleWidth, color }) => {
+export const ButtonsConvector: FC<IProps> = ({ text, doubleWidth, color, onPress }) => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
 
     const onButtonPress = () => {
+        onPress(text);
         settingsModel.vibration && ReactNativeHapticFeedback.trigger('impactLight');
     }
 

@@ -13,6 +13,7 @@
     "@react-native-async-storage/async-storage": "^1.17.4",
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/stack": "^6.2.1",
+    "glob": "^7.2.0",
     "i18n-js": "^3.9.2",
     "mobx": "^6.5.0",
     "mobx-react": "^7.4.0",
@@ -26,8 +27,8 @@
     "react-native-svg": "^12.3.0"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-decorators": "^7.17.9",
     "@babel/core": "^7.17.10",
+    "@babel/plugin-proposal-decorators": "^7.17.9",
     "@babel/runtime": "^7.17.9",
     "@react-native-community/eslint-config": "^3.0.2",
     "@types/i18n-js": "^3.8.2",

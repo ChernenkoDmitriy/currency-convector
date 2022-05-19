@@ -6,6 +6,7 @@ export interface IRatesModel {
     firstRate: IRate | null;
     secondRate: IRate | null;
     ralesList: string[];
+    rate: number;
 }
 
 class RatesModel implements IRatesModel {
@@ -50,6 +51,10 @@ class RatesModel implements IRatesModel {
     set ralesList(data: string[]) {
         this.ralesListStore.save(data);
         this.persistRatesList(data);
+    }
+
+    get rate() {
+        return this.firstRate?.rates[this.secondRate?.base_code];
     }
 
 }
