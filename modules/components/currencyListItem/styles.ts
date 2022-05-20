@@ -12,14 +12,11 @@ export const getStyle = (colors: IColors) => {
             paddingHorizontal: 20,
         },
         logo: {
-            borderColor: colors.borderCurrency,
-            borderWidth: 1,
             marginRight: 10,
-            width: 36,
-            height: 36,
+            width: 40,
+            height: 26,
             justifyContent: 'center',
             alignItems: 'center',
-            borderRadius: 50,
         },
         textWrapper: {
             flex: 1,

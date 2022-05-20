@@ -20,8 +20,8 @@ export const CurrencyRowMain: FC<IProps> = ({ currency, amount, onPress }) => {
     return (
         <TouchableOpacity style={styles.container} onPress={onPress}>
             <View style={styles.containerLogo}>
-                <Image source={{ uri: image }} style={styles.logo} resizeMode='stretch' />
-                <Text>{currency?.base_code}</Text>
+                <Image source={image} style={styles.logo} resizeMode='stretch' />
+                <Text style={styles.symbol}>{currency?.base_code}</Text>
             </View>
             <View style={styles.textWrapper}>
                 <Text numberOfLines={1} style={styles.amountText}>{amount}</Text>

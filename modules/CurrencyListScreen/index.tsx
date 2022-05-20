@@ -21,7 +21,20 @@ export const CurrencyListScreen: FC = observer(() => {
         return ratesModel.ralesList?.filter((item) =>
             item?.toLowerCase().includes(search) ||
             t(item).toLowerCase().includes(search))
-    }, [ratesModel.ralesList, searchText])
+    }, [ratesModel.ralesList, searchText]);
+
+    const test = () => {
+        let dataCurr = {};
+        data.forEach(item => {
+            dataCurr[item.toLowerCase()] = `require('./flags/${item.toLowerCase()}.png')`
+        })
+        return dataCurr
+    }
+   
+
+    console.log( test())
+
+
 
     return (
         <SafeAreaView style={styles.container}>

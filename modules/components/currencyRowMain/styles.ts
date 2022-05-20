@@ -19,21 +19,19 @@ export const getStyle = (colors: IColors) => {
             height: '100%',
             width: 70,
             alignItems: 'center',
-            justifyContent: 'space-around'
+            justifyContent: 'center'
         },
         logo: {
-            borderColor: colors.borderCurrency,
-            borderWidth: 1,
             width: 40,
-            height: 40,
+            height: 26,
             justifyContent: 'center',
             alignItems: 'center',
-            borderRadius: 50,
         },
         symbol: {
+            marginTop: 15,
             color: colors.regularText,
-            fontSize: 30,
-            lineHeight: 34,
+            fontSize: 18,
+            lineHeight: 22,
         },
         textWrapper: {
             flex: 1,

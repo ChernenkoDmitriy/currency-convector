@@ -1,5 +1,4 @@
-import { flagsImages } from "./flagsImages";
-import { IFlags } from "./IFlags";
+import { IFlags } from './IFlags';
 
 class Flags implements IFlags {
 	private static instance: Flags;
@@ -257,6 +256,170 @@ class Flags implements IFlags {
 		HM: require('./png_flags/AU.png'),
 	};
 
+	readonly flags_2 = {
+		aed: require('./flags/aed.png'),
+		afn: require('./flags/afn.png'),
+		all: require('./flags/all.png'),
+		amd: require('./flags/amd.png'),
+		ang: require('./flags/ang.png'),
+		aoa: require('./flags/aoa.png'),
+		ars: require('./flags/ars.png'),
+		aud: require('./flags/aud.png'),
+		awg: require('./flags/awg.png'),
+		azn: require('./flags/azn.png'),
+		bam: require('./flags/bam.png'),
+		bbd: require('./flags/bbd.png'),
+		bdt: require('./flags/bdt.png'),
+		bgn: require('./flags/bgn.png'),
+		bhd: require('./flags/bhd.png'),
+		bif: require('./flags/bif.png'),
+		bmd: require('./flags/bmd.png'),
+		bnd: require('./flags/bnd.png'),
+		bob: require('./flags/bob.png'),
+		brl: require('./flags/brl.png'),
+		bsd: require('./flags/bsd.png'),
+		btn: require('./flags/btn.png'),
+		bwp: require('./flags/bwp.png'),
+		byn: require('./flags/byn.png'),
+		bzd: require('./flags/bzd.png'),
+		cad: require('./flags/cad.png'),
+		cdf: require('./flags/cdf.png'),
+		chf: require('./flags/chf.png'),
+		clp: require('./flags/clp.png'),
+		cny: require('./flags/cny.png'),
+		cop: require('./flags/cop.png'),
+		crc: require('./flags/crc.png'),
+		cup: require('./flags/cup.png'),
+		cve: require('./flags/cve.png'),
+		czk: require('./flags/czk.png'),
+		djf: require('./flags/djf.png'),
+		dkk: require('./flags/dkk.png'),
+		dop: require('./flags/dop.png'),
+		dzd: require('./flags/dzd.png'),
+		egp: require('./flags/egp.png'),
+		ern: require('./flags/ern.png'),
+		etb: require('./flags/etb.png'),
+		eur: require('./flags/eur.png'),
+		fjd: require('./flags/fjd.png'),
+		fkp: require('./flags/fkp.png'),
+		// fok: require('./flags/fok.png'),
+		gbp: require('./flags/gbp.png'),
+		gel: require('./flags/gel.png'),
+		ggp: require('./flags/ggp.png'),
+		ghs: require('./flags/ghs.png'),
+		gip: require('./flags/gip.png'),
+		gmd: require('./flags/gmd.png'),
+		gnf: require('./flags/gnf.png'),
+		gtq: require('./flags/gtq.png'),
+		gyd: require('./flags/gyd.png'),
+		hkd: require('./flags/hkd.png'),
+		hnl: require('./flags/hnl.png'),
+		hrk: require('./flags/hrk.png'),
+		htg: require('./flags/htg.png'),
+		huf: require('./flags/huf.png'),
+		idr: require('./flags/idr.png'),
+		ils: require('./flags/ils.png'),
+		imp: require('./flags/imp.png'),
+		inr: require('./flags/inr.png'),
+		iqd: require('./flags/iqd.png'),
+		irr: require('./flags/irr.png'),
+		isk: require('./flags/isk.png'),
+		jep: require('./flags/jep.png'),
+		jmd: require('./flags/jmd.png'),
+		jod: require('./flags/jod.png'),
+		jpy: require('./flags/jpy.png'),
+		kes: require('./flags/kes.png'),
+		kgs: require('./flags/kgs.png'),
+		khr: require('./flags/khr.png'),
+		// kid: require('./flags/kid.png'),
+		kmf: require('./flags/kmf.png'),
+		krw: require('./flags/krw.png'),
+		kwd: require('./flags/kwd.png'),
+		kyd: require('./flags/kyd.png'),
+		kzt: require('./flags/kzt.png'),
+		lak: require('./flags/lak.png'),
+		lbp: require('./flags/lbp.png'),
+		lkr: require('./flags/lkr.png'),
+		lrd: require('./flags/lrd.png'),
+		lsl: require('./flags/lsl.png'),
+		lyd: require('./flags/lyd.png'),
+		mad: require('./flags/mad.png'),
+		mdl: require('./flags/mdl.png'),
+		mga: require('./flags/mga.png'),
+		mkd: require('./flags/mkd.png'),
+		mmk: require('./flags/mmk.png'),
+		mnt: require('./flags/mnt.png'),
+		mop: require('./flags/mop.png'),
+		// mru: require('./flags/mru.png'),
+		mur: require('./flags/mur.png'),
+		mvr: require('./flags/mvr.png'),
+		mwk: require('./flags/mwk.png'),
+		mxn: require('./flags/mxn.png'),
+		myr: require('./flags/myr.png'),
+		mzn: require('./flags/mzn.png'),
+		nad: require('./flags/nad.png'),
+		ngn: require('./flags/ngn.png'),
+		nio: require('./flags/nio.png'),
+		nok: require('./flags/nok.png'),
+		npr: require('./flags/npr.png'),
+		nzd: require('./flags/nzd.png'),
+		omr: require('./flags/omr.png'),
+		pab: require('./flags/pab.png'),
+		pen: require('./flags/pen.png'),
+		pgk: require('./flags/pgk.png'),
+		php: require('./flags/php.png'),
+		pkr: require('./flags/pkr.png'),
+		pln: require('./flags/pln.png'),
+		pyg: require('./flags/pyg.png'),
+		qar: require('./flags/qar.png'),
+		ron: require('./flags/ron.png'),
+		rsd: require('./flags/rsd.png'),
+		rub: require('./flags/rub.png'),
+		rwf: require('./flags/rwf.png'),
+		sar: require('./flags/sar.png'),
+		sbd: require('./flags/sbd.png'),
+		scr: require('./flags/scr.png'),
+		// sdg: require('./flags/sdg.png'),
+		sek: require('./flags/sek.png'),
+		sgd: require('./flags/sgd.png'),
+		shp: require('./flags/shp.png'),
+		sll: require('./flags/sll.png'),
+		sos: require('./flags/sos.png'),
+		srd: require('./flags/srd.png'),
+		// ssp: require('./flags/ssp.png'),
+		// stn: require('./flags/stn.png'),
+		syp: require('./flags/syp.png'),
+		szl: require('./flags/szl.png'),
+		thb: require('./flags/thb.png'),
+		tjs: require('./flags/tjs.png'),
+		tmt: require('./flags/tmt.png'),
+		tnd: require('./flags/tnd.png'),
+		top: require('./flags/top.png'),
+		try: require('./flags/try.png'),
+		ttd: require('./flags/ttd.png'),
+		// tvd: require('./flags/tvd.png'),
+		twd: require('./flags/twd.png'),
+		tzs: require('./flags/tzs.png'),
+		uah: require('./flags/uah.png'),
+		ugx: require('./flags/ugx.png'),
+		usd: require('./flags/usd.png'),
+		uyu: require('./flags/uyu.png'),
+		uzs: require('./flags/uzs.png'),
+		// ves: require('./flags/ves.png'),
+		vnd: require('./flags/vnd.png'),
+		vuv: require('./flags/vuv.png'),
+		wst: require('./flags/wst.png'),
+		xaf: require('./flags/xaf.png'),
+		xcd: require('./flags/xcd.png'),
+		// xdr: require('./flags/xdr.png'),
+		xof: require('./flags/xof.png'),
+		xpf: require('./flags/xpf.png'),
+		yer: require('./flags/yer.png'),
+		zar: require('./flags/zar.png'),
+		zmw: require('./flags/zmw.png'),
+		// zwl: require('./flags/zwl.png'),
+	};
+
 	constructor() {
 		if (Flags.instance) {
 			return Flags.instance;
@@ -265,16 +428,18 @@ class Flags implements IFlags {
 	}
 
 	getFlag = (key: string) => {
-		return this.flags[key?.toUpperCase()] || require('./png_flags/_unknown.png');
-	}
+		return (
+			this.flags[key?.toUpperCase()] || require('./png_flags/_unknown.png')
+		);
+	};
 
 	getFlagByCurrency = (key: string | undefined) => {
-		return flagsImages[key?.toLowerCase()];
-	}
+		return this.flags_2[key?.toLowerCase()] || require('./flags/unknown.png');
+	};
 
 	getAllFlags = () => {
 		return this.flags;
-	}
+	};
 }
 
 export const flags = new Flags();

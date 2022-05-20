@@ -20,7 +20,7 @@ export const CurrencyListItem: FC<IProps> = memo(({ name, onPress }) => {
 
     return (
         <TouchableOpacity style={styles.container} onPress={onHandlePress}>
-            <Image source={{ uri: image }} style={styles.logo} resizeMode='stretch' />
+            <Image source={image} style={styles.logo} resizeMode='stretch' />
             <View style={styles.textWrapper}>
                 <Text numberOfLines={1} style={styles.text}>{t(name)}</Text>
             </View>
