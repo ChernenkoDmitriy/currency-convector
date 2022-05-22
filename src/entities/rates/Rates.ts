@@ -3,6 +3,7 @@ import { MobXRepository } from "../../store/MobXRepository";
 import { IRate } from "./IRate";
 
 export interface IRatesModel {
+    lastUpdate: number;
     firstRate: IRate | null;
     secondRate: IRate | null;
     ralesList: string[];
@@ -10,6 +11,7 @@ export interface IRatesModel {
 }
 
 class RatesModel implements IRatesModel {
+    private lastUpdateStore = new MobXRepository<number | null>(Date.now());
     private firstRateStore = new MobXRepository<IRate | null>();
     private secondRateStore = new MobXRepository<IRate>();
     private ralesListStore = new MobXRepository<string[]>([]);
@@ -26,6 +28,14 @@ class RatesModel implements IRatesModel {
         this.storage.get('RATE_LIST')
             .then(data => { data && this.ralesListStore.save(data); })
             .catch(error => console.warn('RatesModel -> ralesList: ', error));
+    }
+
+    get lastUpdate() {
+        return this.lastUpdateStore.data as number;
+    }
+
+    set lastUpdate(data: number) {
+        this.lastUpdateStore.save(data);
     }
 
     get firstRate() {

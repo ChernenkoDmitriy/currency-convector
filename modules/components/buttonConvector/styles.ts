@@ -13,12 +13,10 @@ export const getStyle = (colors: IColors) => {
             height: '20%',
             justifyContent: 'center',
             alignItems: 'center',
-            borderWidth: 1,
-            borderColor: colors.border
         },
         text: {
             color: colors.regularText,
-            fontSize: scaleFontSize(48),
+            fontSize: scaleFontSize(36),
         },
     });
     return styles;

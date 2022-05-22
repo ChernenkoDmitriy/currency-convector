@@ -9,7 +9,9 @@ export const getStyle = (colors: IColors) => {
             width: '100%',
             borderBottomColor: colors.border,
             borderBottomWidth: 1,
-            justifyContent: 'center',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center'
         },
         button: {
             height: scaleVertical(50),

@@ -5,8 +5,6 @@ export type IColors = {
     background: string;
     border: string;
     regularText: string;
-    buttonEdit: string;
-    buttonOperation: string;
     buttonNumber: string;
     borderCurrency: string;
     subText: string;

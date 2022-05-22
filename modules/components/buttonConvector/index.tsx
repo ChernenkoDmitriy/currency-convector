@@ -5,16 +5,15 @@ import { BUTTON_SIZE, getStyle } from './styles';
 import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 import { settingsModel } from '../../../src/entities/settings/Settings';
 
-
 interface IProps {
+    icon?: React.ReactElement;
     doubleWidth?: boolean;
-    color: string;
-    value: string;
+    color?: string;
     text: string;
     onPress: (value: string) => void;
 }
 
-export const ButtonsConvector: FC<IProps> = memo(({ text, doubleWidth, color, onPress }) => {
+export const ButtonsConvector: FC<IProps> = memo(({ icon, text, doubleWidth, color, onPress }) => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
 
@@ -30,10 +29,13 @@ export const ButtonsConvector: FC<IProps> = memo(({ text, doubleWidth, color, on
                 styles.container,
                 {
                     width: doubleWidth ? BUTTON_SIZE * 2 : BUTTON_SIZE,
-                    backgroundColor: color,
                 }
             ]}>
-            <Text style={styles.text}>{text}</Text>
+            {
+                icon
+                    ? icon
+                    : <Text style={[styles.text, { color: color || colors.regularText }]}>{text}</Text>
+            }
         </TouchableOpacity>
     );
 });

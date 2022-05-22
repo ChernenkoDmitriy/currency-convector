@@ -7,8 +7,6 @@ export const getStyle = (colors: IColors) => {
         container: {
             flex: 1,
             width: '100%',
-            borderBottomColor: colors.border,
-            borderBottomWidth: 1,
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',

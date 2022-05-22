@@ -1,17 +1,20 @@
 import React, { FC, memo, useMemo } from 'react';
 import { View } from 'react-native';
+import { BackspaceIcon } from '../../../assets/backspaceIcon';
+import { ExchangeIcon } from '../../../assets/exchangeIcon';
 import { calculatorModel } from '../../../src/entities/calculator/Calculator';
 import { useUiContext } from '../../../src/UIProvider';
 import { useChoseCurrency } from '../../presenter/useChoseCurrency';
 import { ButtonsConvector } from '../buttonConvector';
-import { styles } from './styles';
+import { getStyle } from './styles';
 
 export const ButtonsConvectorBlock: FC = memo(() => {
     const { colors } = useUiContext();
     const { onChoseOppositeCurrency } = useChoseCurrency();
+    const styles = useMemo(() => getStyle(colors), [colors])
 
     const onPressNumber = (value: string) => {
-        if ( calculatorModel.firstRateRow.length < 14) {
+        if (calculatorModel.firstRateRow.length < 14) {
             if (value === '.' && calculatorModel.firstRateRow.includes('.') ||
                 calculatorModel.firstRateRow === '0' && calculatorModel.firstRateRow.length === 1 && value === '0') {
                 return;
@@ -40,25 +43,25 @@ export const ButtonsConvectorBlock: FC = memo(() => {
     }
 
     const BUTTONS = useMemo(() => [
-        { color: colors.buttonEdit, value: 'delete', text: 'C', onPress: onPressClear },
-        { color: colors.buttonEdit, value: 'delete', text: '<', onPress: onPressDelete },
-        { color: colors.buttonEdit, value: 'delete', text: '||', onPress: onChoseOppositeCurrency },
-        { color: colors.buttonOperation, value: 'delete', text: '/', onPress: onPressOperator },
-        { color: colors.buttonNumber, value: 'delete', text: '7', onPress: onPressNumber },
-        { color: colors.buttonNumber, value: 'delete', text: '8', onPress: onPressNumber },
-        { color: colors.buttonNumber, value: 'delete', text: '9', onPress: onPressNumber },
-        { color: colors.buttonOperation, value: 'delete', text: '*', onPress: onPressOperator },
-        { color: colors.buttonNumber, value: 'delete', text: '4', onPress: onPressNumber },
-        { color: colors.buttonNumber, value: 'delete', text: '5', onPress: onPressNumber },
-        { color: colors.buttonNumber, value: 'delete', text: '6', onPress: onPressNumber },
-        { color: colors.buttonOperation, value: 'delete', text: '-', onPress: onPressOperator },
-        { color: colors.buttonNumber, value: 'delete', text: '1', onPress: onPressNumber },
-        { color: colors.buttonNumber, value: 'delete', text: '2', onPress: onPressNumber },
-        { color: colors.buttonNumber, value: 'delete', text: '3', onPress: onPressNumber },
-        { color: colors.buttonOperation, value: 'delete', text: '+', onPress: onPressOperator },
-        { color: colors.buttonNumber, value: 'delete', text: '0', doubleWidth: true, onPress: onPressNumber },
-        { color: colors.buttonNumber, value: 'delete', text: '.', onPress: onPressNumber },
-        { color: colors.buttonOperation, value: 'delete', text: '=', onPress: onPressResult },
+        { color: colors.buttonNumber, text: 'C', onPress: onPressClear },
+        { color: colors.buttonNumber, icon: <BackspaceIcon color={colors.buttonNumber} />, text: '<', onPress: onPressDelete },
+        { color: colors.buttonNumber, icon: <ExchangeIcon color={colors.buttonNumber} />, text: '||', onPress: onChoseOppositeCurrency },
+        { color: colors.buttonNumber, text: '/', onPress: onPressOperator },
+        { text: '7', onPress: onPressNumber },
+        { text: '8', onPress: onPressNumber },
+        { text: '9', onPress: onPressNumber },
+        { color: colors.buttonNumber, text: '*', onPress: onPressOperator },
+        { text: '4', onPress: onPressNumber },
+        { text: '5', onPress: onPressNumber },
+        { text: '6', onPress: onPressNumber },
+        { color: colors.buttonNumber, text: '-', onPress: onPressOperator },
+        { text: '1', onPress: onPressNumber },
+        { text: '2', onPress: onPressNumber },
+        { text: '3', onPress: onPressNumber },
+        { color: colors.buttonNumber, text: '+', onPress: onPressOperator },
+        { text: '0', doubleWidth: true, onPress: onPressNumber },
+        { text: '.', onPress: onPressNumber },
+        { color: colors.buttonNumber, text: '=', onPress: onPressResult },
     ], [colors]);
 
     return (
