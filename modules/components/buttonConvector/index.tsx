@@ -19,7 +19,7 @@ export const ButtonsConvector: FC<IProps> = memo(({ icon, text, doubleWidth, col
 
     const onButtonPress = () => {
         onPress(text);
-        settingsModel.vibration && ReactNativeHapticFeedback.trigger('impactLight');
+        settingsModel.vibration && ReactNativeHapticFeedback.trigger('impactMedium', { ignoreAndroidSystemSettings: true });
     }
 
     return (
