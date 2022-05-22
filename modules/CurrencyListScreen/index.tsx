@@ -23,19 +23,6 @@ export const CurrencyListScreen: FC = observer(() => {
             t(item).toLowerCase().includes(search))
     }, [ratesModel.ralesList, searchText]);
 
-    const test = () => {
-        let dataCurr = {};
-        data.forEach(item => {
-            dataCurr[item.toLowerCase()] = `require('./flags/${item.toLowerCase()}.png')`
-        })
-        return dataCurr
-    }
-   
-
-    console.log( test())
-
-
-
     return (
         <SafeAreaView style={styles.container}>
             <Header title={t('currency')} />

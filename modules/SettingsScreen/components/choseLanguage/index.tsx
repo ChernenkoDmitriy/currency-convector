@@ -43,6 +43,7 @@ export const ChoseLanguage: FC<IProps> = memo(({ onChangeLanguage }) => {
                 onBackdropPress={onCloseModal}
             >
                 <View style={styles.container}>
+                    <View style={styles.modalIndicator}/>
                     <Text style={styles.title}>{t('language')}</Text>
                     <FlatList keyExtractor={keyExtractor} renderItem={renderItem} data={locales} />
                 </View>

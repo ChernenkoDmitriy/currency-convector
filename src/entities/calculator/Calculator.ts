@@ -4,6 +4,7 @@ import { IRatesModel, ratesModel } from "../rates/Rates";
 export interface ICalculatorModel {
     firstRateRow: string;
     operator: string;
+    readonly operand: string;
     readonly secondRateRow: string;
     calculateResult: () => void;
 }
@@ -35,7 +36,14 @@ class CalculatorModel implements ICalculatorModel {
         return this.operatorStore.data || '';
     }
 
+    get operand() {
+        return this.operandStore.data ?? '';
+    }
+
     set operator(data: string) {
+        if (this.operator) {
+            this.calculateResult();
+        }
         this.operatorStore.save(data);
         this.operandStore.save(this.firstRateRow);
         this.firstRateRow = '0';
@@ -45,15 +53,16 @@ class CalculatorModel implements ICalculatorModel {
         if (this.operator) {
             const calculatedResult = this.operandStore.data + this.operator + this.firstRateRow;
             const result = eval(calculatedResult);
-            console.log('result ',  String(Math.trunc(result * 100) / 100))
             this.firstRateRow = String(Math.trunc(result * 100) / 100);
+            this.operatorStore.save('');
         }
     }
 
     calculateClear() {
         this.firstRateRow = '0';
+        this.secondRateRowStore.save('0');
         this.operandStore.save('0');
-        this.operator = '';
+        this.operatorStore.save('');
     }
 
     calculateDelete() {

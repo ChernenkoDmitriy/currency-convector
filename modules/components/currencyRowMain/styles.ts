@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
 import { IColors } from '../../../src/UIProvider/colors/IColorsController';
+import { scaleFontSize, scaleVertical } from '../../../src/utils';
 
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
-            minHeight: 70,
             flex: 1,
             width: '100%',
             borderBottomColor: colors.border,
@@ -22,25 +22,31 @@ export const getStyle = (colors: IColors) => {
             justifyContent: 'center'
         },
         logo: {
-            width: 40,
-            height: 26,
+            width: scaleVertical(40),
+            height: scaleVertical(26),
             justifyContent: 'center',
             alignItems: 'center',
         },
         symbol: {
-            marginTop: 15,
+            marginTop: scaleVertical(15),
             color: colors.regularText,
-            fontSize: 18,
-            lineHeight: 22,
+            fontSize: scaleFontSize(18),
+            lineHeight: scaleFontSize(22),
         },
         textWrapper: {
             flex: 1,
-            alignItems: 'flex-end'
+            alignItems: 'flex-end',
         },
         amountText: {
             color: colors.regularText,
-            fontSize: 30,
-            lineHeight: 34,
+            fontSize: scaleFontSize(30),
+            lineHeight: scaleFontSize(34),
+        },
+        calculationText: {
+            color: colors.regularText,
+            fontSize: scaleFontSize(12),
+            lineHeight: scaleFontSize(16),
+            marginVertical: scaleVertical(4),
         },
     });
     return styles;

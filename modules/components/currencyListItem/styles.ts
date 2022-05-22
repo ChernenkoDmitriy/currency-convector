@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { IColors } from '../../../src/UIProvider/colors/IColorsController';
+import { scaleHorizontal, scaleVertical } from '../../../src/utils';
 
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
@@ -12,9 +13,9 @@ export const getStyle = (colors: IColors) => {
             paddingHorizontal: 20,
         },
         logo: {
-            marginRight: 10,
-            width: 40,
-            height: 26,
+            marginRight: scaleHorizontal(10),
+            width: scaleVertical(40),
+            height: scaleVertical(26),
             justifyContent: 'center',
             alignItems: 'center',
         },
