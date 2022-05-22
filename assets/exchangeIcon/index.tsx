@@ -8,7 +8,7 @@ interface IProps {
 }
 
 export const ExchangeIcon: FC<IProps> = ({ width, height, color }) => (
-    <Svg width={width || 36} height={height || 30} fill="none" viewBox="0 0 122 101"  >
+    <Svg width={width || 28} height={height || 22} fill="none" viewBox="0 0 122 101"  >
         <Path
             stroke={color || "#000"}
             fill={color || "#000"}

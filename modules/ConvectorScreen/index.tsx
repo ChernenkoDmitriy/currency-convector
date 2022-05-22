@@ -30,7 +30,7 @@ export const ConvectorScreen: FC<IProps> = observer(({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
             <HeaderMain />
-            <CurrencyRowMain currency={firstRate} amount={calculatorModel.firstRateRow} onPress={() => goToCurrencyList(true)} />
+            <CurrencyRowMain isShowCalculation currency={firstRate} amount={calculatorModel.firstRateRow} onPress={() => goToCurrencyList(true)} />
             <CurrencyRowMain currency={secondRate} amount={calculatorModel.secondRateRow} onPress={() => goToCurrencyList(false)} />
             <ButtonsConvectorBlock />
         </SafeAreaView>

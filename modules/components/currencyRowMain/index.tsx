@@ -8,12 +8,13 @@ import { useUiContext } from '../../../src/UIProvider';
 import { getStyle } from './styles';
 
 interface IProps {
+    isShowCalculation?: boolean;
     currency: IRate | null;
     amount: string;
     onPress: () => void;
 }
 
-export const CurrencyRowMain: FC<IProps> = observer(({ currency, amount, onPress }) => {
+export const CurrencyRowMain: FC<IProps> = observer(({ currency, amount, onPress, isShowCalculation }) => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
 
@@ -27,7 +28,7 @@ export const CurrencyRowMain: FC<IProps> = observer(({ currency, amount, onPress
             </View>
             <View style={styles.textWrapper}>
                 <Text numberOfLines={1} style={styles.calculationText}>
-                    {!!calculatorModel.operator ? calculatorModel.operand + calculatorModel.operator : ''}
+                    {!!calculatorModel.operator && isShowCalculation ? calculatorModel.operand + calculatorModel.operator : ''}
                 </Text>
                 <Text numberOfLines={1} style={styles.amountText}>{amount}</Text>
             </View>
