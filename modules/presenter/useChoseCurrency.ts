@@ -38,6 +38,6 @@ export const useChoseCurrency = () => {
         navigation.goBack();
     }
 
-    return { searchText, setSearchText, onChoseCurrency, onChoseOppositeCurrency };
+    return { searchText, setSearchText, onChoseCurrency, onChoseOppositeCurrency, getNewRate };
 
 }
