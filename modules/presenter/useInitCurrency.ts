@@ -10,18 +10,10 @@ export const useInitCurrency = () => {
     }, [ratesModel.firstRate, ratesModel.secondRate]);
 
     const loadCurrencies = async () => {
-        const responseUsd = await fetchCurrency();
-        if (responseUsd?.rates) {
-            ratesModel.ralesList = Object.keys(responseUsd?.rates);
-        }
-        if (!ratesModel.firstRate) {
-            ratesModel.firstRate = responseUsd;
-        }
-        if (!ratesModel.secondRate) {
-            const responseEur = await fetchCurrency('EUR');
-            if (responseEur?.rates) {
-                ratesModel.secondRate = responseEur;
-            }
+        const response = await fetchCurrency();
+        if (response?.result === 'success') {
+            ratesModel.ralesList = response;
+            ratesModel.lastUpdate = Date.now();
         }
     }
 

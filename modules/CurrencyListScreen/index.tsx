@@ -18,7 +18,8 @@ export const CurrencyListScreen: FC = observer(() => {
 
     const data = useMemo(() => {
         const search = searchText.toLowerCase();
-        return ratesModel.ralesList?.filter((item) =>
+        const rates = Object.keys(ratesModel.ralesList?.rates || {});
+        return rates.filter((item) =>
             item?.toLowerCase().includes(search) ||
             t(item).toLowerCase().includes(search))
     }, [ratesModel.ralesList, searchText]);

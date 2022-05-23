@@ -18,6 +18,7 @@ export const getStyle = (colors: IColors) => {
             height: scaleVertical(26),
             justifyContent: 'center',
             alignItems: 'center',
+            borderRadius: 4,
         },
         textWrapper: {
             flex: 1,

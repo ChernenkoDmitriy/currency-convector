@@ -18,8 +18,6 @@ interface IProps {
 export const ConvectorScreen: FC<IProps> = observer(({ navigation }) => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
-    const firstRate = ratesModel.firstRate;
-    const secondRate = ratesModel.secondRate;
 
     useInitCurrency();
 
@@ -30,8 +28,8 @@ export const ConvectorScreen: FC<IProps> = observer(({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
             <HeaderMain />
-            <CurrencyRowMain isShowCalculation currency={firstRate} amount={calculatorModel.firstRateRow} onPress={() => goToCurrencyList(true)} />
-            <CurrencyRowMain currency={secondRate} amount={calculatorModel.secondRateRow} onPress={() => goToCurrencyList(false)} />
+            <CurrencyRowMain isShowCalculation currency={ratesModel.firstRate} amount={calculatorModel.firstRateRow} onPress={() => goToCurrencyList(true)} />
+            <CurrencyRowMain currency={ratesModel.secondRate} amount={calculatorModel.secondRateRow} onPress={() => goToCurrencyList(false)} />
             <ButtonsConvectorBlock />
         </SafeAreaView>
     );
