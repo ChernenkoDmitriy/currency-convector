@@ -9,8 +9,8 @@ interface IProps {
 
 export const ResetCalculateIcon: FC<IProps> = ({ width, height, color }) => (
     <Svg
-        width={width || 40}
-        height={height || 40}
+        width={width || 35}
+        height={height || 35}
         fill="none"
         viewBox="0 0 50 50"
     >

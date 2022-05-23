@@ -12,7 +12,7 @@ import { useUiContext } from '../../../src/UIProvider';
 import { useChoseCurrency } from '../../presenter/useChoseCurrency';
 import { ButtonsConvector } from '../buttonConvector';
 import { getStyle } from './styles';
-import { PlusIcon } from '../../../assets/PlusIcon';
+import { PlusIcon } from '../../../assets/plusIcon';
 
 export const ButtonsConvectorBlock: FC = memo(() => {
     const { colors } = useUiContext();
