@@ -7,11 +7,7 @@ import mobileAds from 'react-native-google-mobile-ads';
 
 mobileAds()
     .initialize()
-    .then(adapterStatuses => {
-
-    });
-
-
+    .then(adapterStatuses => { });
 
 export const App: FC = () => {
 

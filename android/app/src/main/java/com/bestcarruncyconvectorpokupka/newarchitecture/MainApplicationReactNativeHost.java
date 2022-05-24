@@ -1,4 +1,4 @@
-package com.currency_convector.newarchitecture;
+package com.bestcarruncyconvectorpokupka.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.currency_convector.BuildConfig;
-import com.currency_convector.newarchitecture.components.MainComponentsRegistry;
-import com.currency_convector.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.bestcarruncyconvectorpokupka.BuildConfig;
+import com.bestcarruncyconvectorpokupka.newarchitecture.components.MainComponentsRegistry;
+import com.bestcarruncyconvectorpokupka.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

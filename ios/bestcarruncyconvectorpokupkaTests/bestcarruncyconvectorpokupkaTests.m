@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface currency_convectorTests : XCTestCase
+@interface bestcarruncyconvectorpokupkaTests : XCTestCase
 
 @end
 
-@implementation currency_convectorTests
+@implementation bestcarruncyconvectorpokupkaTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {
