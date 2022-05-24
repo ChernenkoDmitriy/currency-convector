@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native';
 import { calculatorModel } from '../../src/entities/calculator/Calculator';
 import { ratesModel } from '../../src/entities/rates/Rates';
 import { useUiContext } from '../../src/UIProvider';
+import { AdBanner } from '../components/adBanner';
 import { ButtonsConvectorBlock } from '../components/buttonsConvectorBlock';
 import { CurrencyRowMain } from '../components/currencyRowMain';
 import { HeaderMain } from '../components/headerMain';
@@ -31,6 +32,7 @@ export const ConvectorScreen: FC<IProps> = observer(({ navigation }) => {
             <CurrencyRowMain isShowCalculation currency={ratesModel.firstRate} amount={calculatorModel.firstRateRow} onPress={() => goToCurrencyList(true)} />
             <CurrencyRowMain currency={ratesModel.secondRate} amount={calculatorModel.secondRateRow} onPress={() => goToCurrencyList(false)} />
             <ButtonsConvectorBlock />
+            <AdBanner />
         </SafeAreaView>
     );
 });
