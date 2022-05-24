@@ -10,7 +10,7 @@ export const InformationScreen: FC = ({ }) => {
     const styles = useMemo(() => getStyle(colors), [colors]);
 
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
             <Header title={t('information')} />
             <InfoBlock question={t('infoQuestionLink')} answer={t('infoAnswerLink')} />
             <InfoBlock question={t('infoQuestionAutonom')} answer={t('infoAnswerAutonom')} />

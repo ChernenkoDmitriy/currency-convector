@@ -11,7 +11,7 @@ export const RateUpdateInfo: FC = observer(() => {
     const styles = useMemo(() => getStyle(colors), [colors]);
     const updateDate = moment(ratesModel.lastUpdate).format('DD.MM.YYYY HH:mm');
 
-    const rate = Math.trunc(ratesModel.rate * 100) / 100
+    const rate = Math.trunc(ratesModel.rate * 1000) / 1000
 
     return (
         <View style={styles.container}>
