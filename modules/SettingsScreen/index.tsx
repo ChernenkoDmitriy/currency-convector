@@ -1,3 +1,4 @@
+import { StackNavigationProp } from '@react-navigation/stack';
 import { observer } from 'mobx-react';
 import React, { FC, useMemo } from 'react';
 import { SafeAreaView, Share } from 'react-native';
@@ -13,7 +14,11 @@ import { SettingButton } from './components/settingButton';
 import { SettingButtonSwitch } from './components/settingButtonSwitch';
 import { getStyle } from './styles';
 
-export const SettingsScreen: FC = observer(() => {
+interface IProps {
+    navigation: StackNavigationProp<any>;
+}
+
+export const SettingsScreen: FC<IProps> = observer(({ navigation }) => {
     const { colors, t, theme, saveTheme, setLocale } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
 
@@ -35,7 +40,7 @@ export const SettingsScreen: FC = observer(() => {
     }
 
     const onPressInformation = () => {
-
+        navigation.navigate('INFORMATION');
     }
 
     return (
