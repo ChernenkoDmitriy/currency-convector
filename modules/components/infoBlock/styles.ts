@@ -1,14 +1,14 @@
 import { StyleSheet } from 'react-native';
 import { IColors } from '../../../src/UIProvider/colors/IColorsController';
-import { scaleFontSize } from '../../../src/utils';
+import { scaleFontSize, scaleHorizontal, scaleVertical } from '../../../src/utils';
 
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
             flex: 1,
             width: '100%',
-            paddingHorizontal: 10,
-            paddingVertical: 10,
+            paddingHorizontal: scaleHorizontal(20),
+            paddingVertical: scaleVertical(10),
         },
         questionText: {
             fontSize: scaleFontSize(16),
