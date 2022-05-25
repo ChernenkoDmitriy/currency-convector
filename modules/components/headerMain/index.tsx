@@ -32,7 +32,7 @@ export const HeaderMain: FC = memo(() => {
     }
 
     const onRefresh = () => {
-        isConnected ? onRefreshRates : showToast()
+        isConnected ? onRefreshRates() : showToast()
     }
 
     return (
