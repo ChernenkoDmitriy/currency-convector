@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "852232679647",
+    "project_id": "currency-converter-19ada",
+    "storage_bucket": "currency-converter-19ada.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852232679647:android:8eeac329c4c69cd1dd796a",
+        "android_client_info": {
+          "package_name": "com.bestcarruncyconvectorpokupka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852232679647-kebjhckc3ftd23nmkv9vr979ijgmpjj2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCavnI3tgIr7MPrYM0nLk7DDE8arWpcI_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "852232679647-kebjhckc3ftd23nmkv9vr979ijgmpjj2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
