@@ -5,8 +5,7 @@ import { useUiContext } from '../../../src/UIProvider';
 import { useInterstitialAds } from '../../presenter/useInterstitialAds';
 import { getStyle } from './styles';
 
-const adUnitId = __DEV__ ? TestIds.BANNER : TestIds.BANNER;
-// const adUnitId = __DEV__ ? TestIds.BANNER : 'ca-app-pub-xxxxxxxxxxxxx/yyyyyyyyyyyyyy';
+// const adUnitId = __DEV__ ? TestIds.BANNER : 'ca-app-pub-9751652427589478/4814921750';
 
 export const AdBanner: FC = () => {
     const { colors } = useUiContext();

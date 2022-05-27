@@ -32,7 +32,7 @@ export const SettingsScreen: FC<IProps> = observer(({ navigation }) => {
     }
 
     const onShare = () => {
-        Share.share({ message: 'Best app' });
+        Share.share({ message: 'https://play.google.com/store/apps/details?id=com.bestcarruncyconvectorpokupka' });
     }
 
     const onChangeLanguage = (value: string) => {
